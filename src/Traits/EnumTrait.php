@@ -36,4 +36,25 @@ trait EnumTrait
         $cases = static::casesAssoc();
         return array_diff_key($cases, array_flip($keys));
     }
+
+    public static function onlyList(array $keys): array
+    {
+        return array_values(
+            array_map(
+                fn ($case) => $case->value,
+                self::only($keys)
+            )
+        );
+    }
+
+    public static function exceptList(array $keys): array
+    {
+        return array_values(
+            array_map(
+                fn ($case) => $case->value,
+                self::except($keys)
+            )
+        );
+    }
+
 }
