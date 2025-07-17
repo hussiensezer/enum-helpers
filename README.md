@@ -10,11 +10,12 @@ description: Install this package via Composer:
 composer require sezer/enum-helpers
 ```
 
-usage:
-description: Add the `EnumTrait` to your enum and use the methods:
-code: |
-use Sezer\EnumHelpers\Traits\EnumTrait;
+# Usage:
+Add the `EnumTrait` to your enum and use the methods:
 
+```php
+    use Sezer\EnumHelpers\Traits\EnumTrait;
+    
     enum OrderStatus: string {
         use EnumTrait;
 
@@ -22,6 +23,7 @@ use Sezer\EnumHelpers\Traits\EnumTrait;
         case APPROVED = 'approved';
         case REJECTED = 'rejected';
     }
+```
 
 # Examples:
 - title: Filter with `only()`
